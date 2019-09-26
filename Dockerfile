@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 LABEL maintainer="Jared Harrington-Gibbs"
 LABEL description="A docker running a completely insecure telnet server"
 
