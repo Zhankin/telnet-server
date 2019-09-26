@@ -6,7 +6,7 @@ RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install telnetd xinetd
 RUN apt-get autoremove -y
 RUN apt-get autoclean -y
-RUN apt install python2.7 python-pip
+RUN apt-get -y instal python2.7 python-pip
 RUN rm -rf /var/lib/apt/lists/*
 RUN useradd -u 14 bss
 RUN echo bss:BSSadmin@123 | chpasswd && \
