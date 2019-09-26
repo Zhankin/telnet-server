@@ -1,4 +1,4 @@
-FROM ubuntu:17.10
+FROM ubuntu:16.04
 LABEL maintainer="Jared Harrington-Gibbs"
 LABEL description="A docker running a completely insecure telnet server"
 
@@ -6,6 +6,8 @@ RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get -y install telnetd xinetd && \
     apt-get autoremove -y && \
     apt-get autoclean -y && \
+    apt install python2.7 python-pip && \
+    pip install ftplib && \
     rm -rf /var/lib/apt/lists/* && \
     useradd -u 14 bss && \
     echo bss:BSSadmin@123 | chpasswd && \
