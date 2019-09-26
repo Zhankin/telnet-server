@@ -7,7 +7,6 @@ RUN apt-get update && \
     apt-get autoremove -y && \
     apt-get autoclean -y && \
     apt install python2.7 python-pip && \
-    pip install ftplib && \
     rm -rf /var/lib/apt/lists/* && \
     useradd -u 14 bss && \
     echo bss:BSSadmin@123 | chpasswd && \
