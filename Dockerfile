@@ -3,10 +3,9 @@ LABEL maintainer="Jared Harrington-Gibbs"
 LABEL description="A docker running a completely insecure telnet server"
 
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install telnetd xinetd
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install telnetd xinetd python2.7 python-pip
 RUN apt-get autoremove -y
 RUN apt-get autoclean -y
-RUN apt-get -y instal python2.7 python-pip
 RUN rm -rf /var/lib/apt/lists/*
 RUN useradd -u 14 bss
 RUN echo bss:BSSadmin@123 | chpasswd && \
