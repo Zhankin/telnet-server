@@ -8,7 +8,7 @@ RUN apt-get autoremove -y
 RUN apt-get autoclean -y
 RUN rm -rf /var/lib/apt/lists/*
 RUN useradd -u 14 bss
-RUN echo bss:BSSadmin@123 | chpasswd && \
+RUN echo bss:$USERPASS | chpasswd && \
 		echo "# default: on \n \
     # description: The telnet server serves telnet sessions; it uses unencrypted username/password pairs for authentication. \n \
     service telnet \n \
