@@ -29,5 +29,6 @@ RUN echo "# default: on \n \
 COPY telnet-entrypoint.sh /
 RUN ["chmod", "+x", "/telnet-entrypoint.sh"]
 #ENTRYPOINT ["/telnet-entrypoint.sh"]
-ENTRYPOINT ["/telnet-entrypoint.sh", "bash"]
+#ENTRYPOINT ["/telnet-entrypoint.sh", "bash"]
+ENTRYPOINT ["bash"]
 CMD ["-c","xinetd -dontfork -stayalive"]
