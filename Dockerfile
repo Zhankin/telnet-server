@@ -24,9 +24,12 @@ RUN echo "# default: on \n \
     }" | tee -a /etc/xinetd.d/telnet && \
     rm -f /etc/securetty
 
+
+
+ENTRYPOINT ["bash"]
+
 COPY telnet-entrypoint.sh /
 RUN ["chmod", "+x", "/telnet-entrypoint.sh"]
 ENTRYPOINT ["/telnet-entrypoint.sh"]
 
-ENTRYPOINT ["bash"]
 CMD ["-c","xinetd -dontfork -stayalive"]
